@@ -1,7 +1,5 @@
-class ground
-{
-	constructor(x,y,w,h)
-	{
+class ground{
+	constructor(x,y,w,h){
 		var options={
 			isStatic:true			
 			}
@@ -11,11 +9,7 @@ class ground
 		this.h=h
 		this.body=Bodies.rectangle(x, y, w, h , options);
  		World.add(world, this.body);
-
-	}
-	display()
-	{
-			
+	} display(){	
 			var groundPos=this.body.position;		
 
 			push()
@@ -25,7 +19,5 @@ class ground
 			fill(255,255,0)
 			rect(0,0,this.w, this.h);
 			pop()
-			
 	}
-
 }
