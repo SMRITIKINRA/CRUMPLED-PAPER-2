@@ -12,35 +12,35 @@ function setup() {
 
 	engine = Engine.create();
 	world = engine.world;
-	dustbinObj=new dustbin(1000,280);
-	paperObject=new paper(550,280,85);
+	
+	paperObject=new paper(150,350,70);
 	groundObject=new ground(width/2,370,width,20);
+	dustbinObj=new dustbin(1000,350);
 	//Create a Ground
 	
 	var render = Render.create({
 	  element: document.body,
 	  engine: engine,
 	  options: {
-	    width: 1200,
+	    width: 1600,
 	    height: 700,
 	    wireframes: false
 	  }
 	});
 	Engine.run(engine);
-	//Render.run(render);
+	Render.run(render);
 }
 
 function draw() {
   rectMode(CENTER);
   background("yellow");
- 
-  dustbinObj.display();
   paperObject.display();
   groundObject.display();
+  dustbinObj.display();
 }
 
 function keyPressed() {
   	if (keyCode === UP_ARROW) {
-    	Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:255,y:-255});
+    	Matter.Body.applyForce(paperObject.body,paperObject.body.position,{x:130,y:-145});
   	}
 }
